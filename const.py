@@ -1,0 +1,1 @@
+SENTENCE_BREAKERS = {".", "!", "?", "…"}
