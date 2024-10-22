@@ -8,7 +8,9 @@ class Splitter:
         if sentence_breakers is not None:
             self.__breakers.update(sentence_breakers)
 
-    def split(self, text: str) -> list[str]:
+    def split(self, text: str) -> list[str] | None:
+        if not isinstance(text, str):
+            return None
         splits = text.split("\n")
         for breaker in self.__breakers:
             breaker += " "
@@ -20,6 +22,8 @@ class Splitter:
         retval = list()
         for split in splits:
             split = split.strip()
+            if len(split) == 0:
+                continue
             temp = split.split(split_break)
             if len(temp) == 1:
                 # No split occurred
