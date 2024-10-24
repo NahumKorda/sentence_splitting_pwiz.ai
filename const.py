@@ -1,6 +1,9 @@
 SENTENCE_BREAKERS = {".", "!", "?", "…"}
-TO_REMOVE = [r"\*\*",
-             r"&nbsp;",
-             r"\[",
-             r"\]",
-             r"Thank you in advance"]
+TO_REMOVE = [r"Thank you in advance",
+             "Could you please",
+             "![]",
+             "[]",
+             "()",
+             "( )",
+             "\"",
+             "**"]
